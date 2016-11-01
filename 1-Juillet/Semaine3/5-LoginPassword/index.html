@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+		    <link type="text/css" rel="stylesheet" href="design.css" />
+        <title></title>
+    </head>
+
+    <body>
+        <script>
+
+            var mailVoulu = "joe@gmail.com";
+            var mdpVoulu = "12345";
+
+            var mailDonner = prompt("Entrez votre identifiant (mail) :");
+            var mdpDonner = prompt("Entrez votre mot de passe :");
+
+            while (mailDonner != mailVoulu || mdpDonner != mdpVoulu) {
+                console.log(mailDonner);
+                console.log(mdpDonner);
+                if (mailDonner.length < 4) {
+                    alert("Votre identifiant est trop court");
+                }
+                else if (mailDonner.indexOf("@") === -1) {
+                    alert("Vous devez entrer votre adresse mail");
+                }
+                else if (mdpDonner.length < 4) {
+                    alert("Votre mot de passe est trop court");
+                }
+                else if (mdpDonner != mdpVoulu) {
+                    alert("Votre mot de passe est erroné");
+                }
+                else if (mailDonner != mailVoulu) {
+                    alert("Votre mail est erroné");
+                }
+                mailDonner = prompt("Entrez votre identifiant (mail) :");
+                mdpDonner = prompt("Entrez votre mot de passe :");
+
+            }
+            if (mailDonner === mailVoulu && mdpDonner === mdpVoulu) {
+                alert("Bienvenue");
+            }
+
+        </script>
+    </body>
+</html>

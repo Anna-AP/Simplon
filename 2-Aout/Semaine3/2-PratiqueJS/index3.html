@@ -1,0 +1,54 @@
+<!DOCTYPE>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Afficher et masquer des éléments</title>
+    </head>
+    
+    <style>
+        .bloc {
+            width: 150px;
+            height: 100px;
+            background: #181818;
+            margin: 10px;
+            color: #ffffff;
+        }
+        
+        a {
+            text-decoration: none;
+            color: #181818;
+            font-weight: bold;
+        }
+    </style>
+
+    <body>
+        <div id="bloc_1" class="bloc" onclick="masqueBloc('bloc_1')">Bloc 1</div>
+        <div id="bloc_2" class="bloc" onclick="masqueBloc('bloc_2')">Bloc 2</div>
+        <div id="bloc_3" class="bloc" onclick="masqueBloc('bloc_3')">Bloc 3</div>
+        <div id="bloc_4" class="bloc" onclick="masqueBloc('bloc_4')">Bloc 4</div>
+
+        <div>
+            <a href="#" onclick="reset()">Reset</a>
+        </div>
+        
+        <script>
+            //au clic sur un bloc il doit être masqué. Si un autre était masqué, il doit être affiché
+            //on masque le bloc cliqué
+
+            function masqueBloc(blocId){
+                document.getElementById(blocId).style.visibility="hidden";
+            };
+            
+            //on affiche tous les blocs de la page » qu'ont ils en commun ? leur classe !
+            
+            var elements = document.getElementsByClassName("bloc");
+
+            function reset(){
+                for(i=0; i < elements.length; i++){
+                    
+                    elements[i].style.visibility="visible";
+                };
+            };
+        </script>
+    </body>
+</html>

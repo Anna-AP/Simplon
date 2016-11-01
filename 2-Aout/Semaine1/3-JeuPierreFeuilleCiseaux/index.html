@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title></title>
+    </head>
+
+    <body>
+        <script>
+            do {
+            var choixUtilisateur = prompt("Choisissez-vous pierre, feuille, ou ciseaux ?");
+            var choixOrdi = Math.random();
+            
+            if (choixOrdi < 0.34) {
+	           choixOrdi = "pierre";
+            } else if(choixOrdi <= 0.67) {
+	           choixOrdi = "feuille";
+            } else {
+	           choixOrdi = "ciseaux";
+            }
+            console.log("joueurs : " + choixUtilisateur);
+            console.log("Ordinateur : " + choixOrdi);
+            
+            function jeu(choixUtilisateur, choixOrdi) {
+                
+                if (choixUtilisateur === "pierre" && choixUtilisateur !== choixOrdi) {
+                    if (choixOrdi === "ciseaux"){
+                        return "La pierre gagne !";
+                    } else {
+                        return "La feuille gagne !";
+                    }
+                } else if (choixUtilisateur === "feuille" && choixUtilisateur !== choixOrdi) {
+                    if (choixOrdi === "pierre"){
+                        return "La feuille gagne !";
+                    } else {
+                        return "Les ciseaux gagnent !";
+                    }
+                } else if (choixUtilisateur === "ciseaux" && choixUtilisateur !== choixOrdi) {
+                    if (choixOrdi === "pierre"){
+                        return "La pierre gagne !";
+                    } else {
+                        return "Les ciseaux gagnent !";
+                    }
+                } else {
+                    return "Egalité !";
+                }
+            };
+            alert(jeu(choixUtilisateur,choixOrdi) + " L'ordinateur avait choisi " + choixOrdi + " !");
+            } while (confirm("Voulez-vous continuer ?"));
+        </script>
+    </body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Bienvenu dans ce jeu de devinette !</title>
+    </head>
+    <body>
+          <script>
+          var aleatoire = Math.ceil(Math.random()*100);
+
+          var reponseUtilisateur = prompt("Devinez un nombre entre 0 et 100.");
+
+          while(reponseUtilisateur != aleatoire) {
+            if(reponseUtilisateur === null) {
+              alert('Oups');
+              break;
+            }
+            else if(isNaN(reponseUtilisateur)){
+              alert("Oops");
+              break;
+            }
+          if(reponseUtilisateur > aleatoire) {
+            if((reponseUtilisateur - aleatoire)>10) {
+            reponseUtilisateur = prompt("c'est beaucoup plus petit");
+            }
+            else {
+              reponseUtilisateur = prompt("c'est plus petit");
+            }
+          }
+          else if (reponseUtilisateur < aleatoire) {
+            if((aleatoire - reponseUtilisateur)>10) {
+            reponseUtilisateur = prompt("c'est beaucoup plus grand");
+            }
+            else {
+              reponseUtilisateur = prompt("c'est plus grand");
+            }
+          }
+        }
+        if(reponseUtilisateur == aleatoire) {
+          alert("bravo, vous avez trouvé "+ aleatoire);
+        }
+          </script>
+    </body>
+</html>

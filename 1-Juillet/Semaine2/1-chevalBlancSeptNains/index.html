@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title></title>
+    </head>
+    <body>
+          <script>
+                var chevalBlancReponse = prompt ("Quelle est la couleur du cheval blanc d'Henri IV ?")
+
+                if(chevalBlancReponse == "blanc") {
+                  alert("Gagné");
+                }
+                else if(chevalBlancReponse != "blanc") {
+                  alert("Perdu");
+                  chevalBlancReponse = prompt ("Essai encore")
+                  if(chevalBlancReponse == "blanc") {
+                    alert("Gagné");
+                  }
+                  else {
+                    alert("Perdu");
+                  }
+                }
+
+                var combienDeNains = prompt ("Combien y a t-il de sept nains?")
+
+                if(combienDeNains == 7) {
+                  alert("Gagné");
+                }
+                else if(combienDeNains != 7) {
+                  alert("Perdu");
+                  combienDeNains = prompt ("Essaie encore")
+                  if(combienDeNains == 7) {
+                    alert("bravo");
+                  }
+                  else {
+                    alert("perdu");
+                  }
+                }
+
+                var devinerUnChiffre = prompt ("Devine un chiffre entre 1 et 9")
+
+                if(devinerUnChiffre == 4) {
+                  alert("Gagné");
+                }
+                else if(devinerUnChiffre != 4) {
+                  alert ("Perdu!");
+                  devinerUnChiffre = prompt ("Essaie encore")
+                  if(devinerUnChiffre == 4) {
+                    alert('Gagné');
+                  }
+                  else {
+                    alert("perdu");
+                  }
+                }
+          </script>
+    </body>
+</html>

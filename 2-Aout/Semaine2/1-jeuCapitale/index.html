@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title></title>
+    </head>
+
+    <body>
+        <script>
+            var pays = [ // objet
+                {pays: 'la France', capitale: 'Paris'},
+                {pays: 'l\'Espagne', capitale: 'Madrid'},
+                {pays: 'l\'Italie', capitale: 'Rome'},
+                {pays: 'la Belgique', capitale: 'Bruxelles'}
+            ];
+
+            function devinette () {
+                var tableau = pays.length;
+                
+                for (var i = 0 ; i < tableau ; i++) {
+                    
+                    var index = Math.floor(Math.random()*pays.length);
+                    console.log(paysChoisiAleatoire);
+                    var paysChoisiAleatoire = pays[index].pays;
+                    
+                    var reponseJoueur = prompt("Quel est la capitale de " + paysChoisiAleatoire);
+                    console.log(reponseJoueur);
+                     
+                    if(reponseJoueur === pays[index].capitale) {
+                        alert("gagné");
+                        console.log("gagné");
+                        //je retire le pays utilisé de la liste
+                        pays.splice(index,1);
+                        console.log("nombre de pays restant ", pays.length);
+                    } else {
+                        console.log("perdu");
+                    }
+                    
+                }
+            }
+            
+            devinette();
+            
+            /*Un programme qui tire un pays au hasard et demande sa capitale au joueur ( vérification insensible à la casse ) - si : - le joueur répond correctement, le programme tire un autre pays au sort ( jamais 2 fois le même ) jusqu’à avoir tiré les 4 - le joueur a trois essais par pays, après la troisième erreur : alert(‘Perdu’) - le joueur répond aux 4 : alert(‘Bravo’)*/
+        </script>
+    </body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title></title>
+    </head>
+
+    <body>
+        <script>
+                /*
+                    * Texte / Chaines de caractères / String
+                    * fonctions utiles : indexOf, slice, charAt, toLowerCase
+                    * cf. https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/String
+                */
+
+                // longueur
+                var texte = "un texte";
+                    alert(texte.length);
+
+                // TODO
+                var nombreDeCaracteres = 8;
+                    console.log('nombre de caracteres', nombreDeCaracteres); // 8
+
+                // TODO
+                var quatriemeCaractere = "Texte" ;
+                    console.log('quatrieme caractere', quatriemeCaractere.charAt(3)); // t
+
+                // TODO
+                var quatriemeEtCinquiemeCaracteres = "Texte" ;
+                    console.log('quatrieme et cinquieme caractere', quatriemeEtCinquiemeCaracteres.slice(3)); // t
+
+                // TODO
+                var majuscule = "un texte";
+                    console.log('majuscule', majuscule.toUpperCase()); // UN TEXTE
+
+                // TODO
+                var premierMot = "un texte";
+                    console.log('premierMot', premierMot.slice(0,2)); // un
+
+                // TODO
+                    console.log('premierMotEnMajuscule', premierMot.slice(0,2).toUpperCase()); // un
+
+                var prenom = prompt('votre prenom ?');
+                    // TODO
+                    alert(prenom);
+
+                /*
+                     * nombres
+                     * fonctions utiles : parseInt , parseFloat, isNaN
+                */
+
+                var valeur1 = '15';
+                var somme = parseInt(valeur1) + 3;
+                    console.log('somme == 18', somme == 18 ); // true
+
+                var age = 32;
+                    // TODO
+                    console.log("j'ai " + age + " ans"); // j'ai 32 ans
+
+                /*
+                    * boucles & tableaux
+                */
+
+                var mails = ["Joe@gmAil.com", "LEA@test.com", "Bob@gmAil.com"];
+                var nombreDeMails = mails.length;
+                    console.log('nombreDeMails', nombreDeMails );
+
+                var dernierMail = mails.slice(2);
+                    console.log('dernierMail', dernierMail);
+
+                // est ce que tout les mails sont gmail
+                var queDesGmails;
+                for( var i = 0 ; i < mails.length ; i++ ){
+                    if (mails[i].indexOf('gmAil') === -1) {
+                        queDesGmails = false;
+                        break;
+                    }
+                    else {
+                        queDesGmails = true;
+                    }
+                }
+
+                    console.log('tous les mails sont gmail : ', queDesGmails );
+
+                // mettre les mails en minuscules
+                var mailsMinuscule = ["JOE@gmail.com", "LEA@test.com", "Bob@gmail.com"];
+                for( var i = 0 ; i < mails.length ; i++ ){
+                    alert(mailsMinuscule[i].toLowerCase());
+                }
+                    console.log('mails en minuscules', mailsMinuscule.toString().toLowerCase());
+
+                // TODO : remplacez les @ par des _
+            
+                var mailsAModifier = ["JOE@gmail.com", "LEA@test.com", "Bob@gmail.com"];
+                for (var i = 0 ; i <mailsAModifier.length ; i++){
+                    mailsModifier = mailsAModifier[i].replace('@' , '_');
+                    console.log('mails modifier : ', mailsModifier);
+                }
+
+                // TODO : supprimez les .com
+                var mailsAModifier = ["JOE@gmail.com", "LEA@test.com", "Bob@gmail.com"];
+                for (var i = 0 ; i <mailsAModifier.length ; i++){
+                    mailsModifier = mailsAModifier[i].replace('.com' , '');
+                    console.log('mails modifier : ', mailsModifier);
+                }
+        </script>
+
+    </body>
+</html>

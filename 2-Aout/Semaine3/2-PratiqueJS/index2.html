@@ -1,0 +1,30 @@
+<!DOCTYPE>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Masquer des éléments avec le DOM</title>
+    </head>
+    
+    <style>
+        div {
+            width: 150px;
+            height: 100px;
+            background: #181818;
+            margin: 10px;
+            color: #ffffff;
+        }
+    </style>
+
+    <body>
+        <div id="bloc_1" onclick="masqueBloc('bloc_1')">Bloc 1</div>
+        <div id="bloc_2" onclick="masqueBloc('bloc_2')">Bloc 2</div>
+        <div id="bloc_3" onclick="masqueBloc('bloc_3')">Bloc 3</div>
+        <div id="bloc_4" onclick="masqueBloc('bloc_4')">Bloc 4</div>
+
+        <script>
+            function masqueBloc(blocId) {
+                document.getElementById(blocId).style.visibility="hidden";
+            }
+        </script>
+    </body>
+</html>
