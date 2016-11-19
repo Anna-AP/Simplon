@@ -1,46 +1,28 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="fr">
     <head>
-        <meta charset="utf-8" />
-		    <link type="text/css" rel="stylesheet" href="design.css" />
+        <meta charset="UTF-8">
         <title></title>
     </head>
 
     <body>
         <script>
+            var identifiant= prompt('indiquez votre identifiant (mail)');
+            var motDePasse = prompt('indiquez votre mot de passe');
 
-            var mailVoulu = "joe@gmail.com";
-            var mdpVoulu = "12345";
-
-            var mailDonner = prompt("Entrez votre identifiant (mail) :");
-            var mdpDonner = prompt("Entrez votre mot de passe :");
-
-            while (mailDonner != mailVoulu || mdpDonner != mdpVoulu) {
-                console.log(mailDonner);
-                console.log(mdpDonner);
-                if (mailDonner.length < 4) {
-                    alert("Votre identifiant est trop court");
+            if(identifiant.length > 4 && motDePasse.length > 4) {
+                if(identifiant.indexOf('@') !== - 1) {
+                    if(identifiant === 'joe@gmail.com' && motDePasse === '12345') {
+                        alert('Bienvenu');
+                    } else {
+                        alert('Votre identification est erronée.')
+                    }
+                } else {
+                    alert('Vous devez indiquez une adresse mail comme identifiant');
                 }
-                else if (mailDonner.indexOf("@") === -1) {
-                    alert("Vous devez entrer votre adresse mail");
-                }
-                else if (mdpDonner.length < 4) {
-                    alert("Votre mot de passe est trop court");
-                }
-                else if (mdpDonner != mdpVoulu) {
-                    alert("Votre mot de passe est erroné");
-                }
-                else if (mailDonner != mailVoulu) {
-                    alert("Votre mail est erroné");
-                }
-                mailDonner = prompt("Entrez votre identifiant (mail) :");
-                mdpDonner = prompt("Entrez votre mot de passe :");
-
+            } else {
+                alert('Vous devez saisir plus de quatre caractères');
             }
-            if (mailDonner === mailVoulu && mdpDonner === mdpVoulu) {
-                alert("Bienvenue");
-            }
-
         </script>
     </body>
 </html>

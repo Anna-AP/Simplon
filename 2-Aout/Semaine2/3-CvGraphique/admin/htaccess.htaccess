@@ -1,4 +1,0 @@
-AuthName "Veuillez vous identifier"
-AuthType Basic
-AuthUserFile "/var/www/html/SiteCV/admin/htpasswd.htpasswd"
-Require valid-user

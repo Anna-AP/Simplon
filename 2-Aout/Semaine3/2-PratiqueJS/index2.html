@@ -1,29 +1,42 @@
-<!DOCTYPE>
-<html>
+<!doctype html>
+<html lang="fr">
     <head>
-        <meta charset="utf-8">
-        <title>Masquer des éléments avec le DOM</title>
+        <meta charset="UTF-8">
+        <title></title>
+        <style>
+            div {
+                width: 100px;
+                height: 100px;
+                margin: 6px;
+            }
+
+            #b1 {
+                background-color: red;
+            }
+
+            #b2 {
+                background-color: yellow;
+            }
+
+            #b3 {
+                background-color: orange
+            }
+
+            #b4 {
+                background-color: blue;
+            }
+        </style>
     </head>
-    
-    <style>
-        div {
-            width: 150px;
-            height: 100px;
-            background: #181818;
-            margin: 10px;
-            color: #ffffff;
-        }
-    </style>
 
     <body>
-        <div id="bloc_1" onclick="masqueBloc('bloc_1')">Bloc 1</div>
-        <div id="bloc_2" onclick="masqueBloc('bloc_2')">Bloc 2</div>
-        <div id="bloc_3" onclick="masqueBloc('bloc_3')">Bloc 3</div>
-        <div id="bloc_4" onclick="masqueBloc('bloc_4')">Bloc 4</div>
-
+        <div id="b1" onclick="masqueBloc('b1')">Masquez moi</div>
+        <div id="b2" onclick="masqueBloc('b2')">Masquez moi</div>
+        <div id="b3" onclick="masqueBloc('b3')">Masquez moi</div>
+        <div id="b4" onclick="masqueBloc('b4')">Masquez moi</div>
+        
         <script>
-            function masqueBloc(blocId) {
-                document.getElementById(blocId).style.visibility="hidden";
+            function masqueBloc(blocId){
+                document.getElementById(blocId).style.display = 'none';
             }
         </script>
     </body>

@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+    </head>
+
+    <body>
+        <script>
+
+            for(var i = 2; i < 3; i++) {
+                
+                var nombre1 = Math.round(Math.random() * 100);
+                var nombre2 = Math.round(Math.random() * 99) + 1;
+                var operateurs = ['+', '-', '*'];
+                var operateursAleatoire = operateurs[Math.round(Math.random() * 2)];
+                var resultat;
+
+                switch(operateursAleatoire) {
+                    case'+':
+                        resultat = nombre1 + nombre2;
+                        break;
+                    case'-':
+                        resultat = nombre1 - nombre2;
+                        break;
+                    case'*':
+                        resultat = nombre1 * nombre2;
+                        break;
+                }
+
+                var reponse = parseFloat(prompt('Combien font : ' + nombre1 + operateursAleatoire + nombre2 + ' ?'));
+
+                if(reponse === resultat) {
+                    alert('Bien joué');
+                        if(i === 2) {
+                            var nombre3 = Math.round(Math.random() * 100);
+                            var nombre4 = Math.round(Math.random() * 99) + 1;
+                            var nombre5 = Math.round(Math.random() * 98) + 2;
+                            var operateurs2 = ['+', '-', '*'];
+                            var operateurAleatoire1 = operateurs2[Math.round(Math.random() * 2)];
+                            var operateurAleatoire2 = operateurs2[Math.round(Math.random() * 2)];
+
+                            var resultat2 = eval(nombre3 + operateurAleatoire1 + nombre4 + operateurAleatoire2 + nombre5);
+
+                            var reponse2 = parseFloat(prompt('Combien font : ' + nombre3 + operateurAleatoire1 + nombre4 + operateurAleatoire2 + nombre5 + ' ?'));
+
+                            if(reponse2 === resultat2) {
+                                alert('Bien joué') ;
+                                break;
+                            } else {
+                                alert('Oops, perdu');
+                            }
+                            console.log(resultat2);
+                            console.log(reponse2);
+                        }
+                } else {
+                    alert('Oops, perdu');
+                }
+            }
+        </script>
+    </body>
+</html>

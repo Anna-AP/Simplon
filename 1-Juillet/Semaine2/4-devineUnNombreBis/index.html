@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+    </head>
+
+    <body>
+        <script>
+        var nombreAleatoire = Math.round(Math.random() * 100);
+
+        var reponse = parseFloat(prompt('Devinez un nombre entre 0 et 100'));
+        console.log(nombreAleatoire);
+
+        while (reponse != nombreAleatoire) {
+            if (reponse > nombreAleatoire) {
+               if((reponse - nombreAleatoire) > 10) {
+                    reponse = parseFloat(prompt('C\'est beaucoup plus petit'));
+               } else {
+                    reponse = parseFloat(prompt('C\'est plus petit'));
+               }
+            } else if (reponse < nombreAleatoire) {
+                if((nombreAleatoire - reponse) > 10) {
+                    reponse = parseFloat(prompt('C\'est beaucoup plus grand'));
+                } else {
+                    reponse = parseFloat(prompt('C\'est plus grand'));
+                }
+            }
+        }
+
+        if(reponse === nombreAleatoire){
+            alert('Bien joué !');
+        }
+        </script>
+    </body>
+</html>

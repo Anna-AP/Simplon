@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+    </head>
+
+    <body>
+        <script>
+            var operateur = prompt('Choisissez l\'operation que vous voulez (+ , - , *, /)');
+            var nombre1 = parseFloat(prompt('Choisissez un premier nombre'));
+            var nombre2 = parseFloat(prompt('Choisissez un deuxième nombre'));
+
+            switch (operateur) {
+                case'+':
+                    alert(nombre1 + nombre2);
+                    break;
+                case'-':
+                    alert(nombre1 - nombre2);
+                    break;
+                case'*':
+                    alert(nombre1 * nombre2);
+                    break;
+                case'/':
+                    alert(nombre1 / nombre2);
+            }
+
+        </script>
+    </body>
+</html>

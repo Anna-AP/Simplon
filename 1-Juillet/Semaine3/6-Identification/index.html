@@ -1,73 +1,57 @@
-
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="fr">
     <head>
-        <meta charset="utf-8" />
-		    <!--<link type="text/css" rel="stylesheet" href="design.css" />-->
+        <meta charset="UTF-8">
         <title></title>
     </head>
 
     <body>
         <script>
+            var identifiant = ' ';
+            var motDePasse = ' ';
 
+            var compte = {
+                'toto@gmail.com': '12345',
+                'tutu@gmail.com': '23456',
+                'titi@gmail.com': '34567'
+            };
 
-            var mailUtilisateurDonner = " "; //je demande à l'utilisateur d'indiquer son mail
-            var motDePasseUtilisateurDonner = " "; //je demande à l'utilisateur d'indiquer son mdp
-            var identifiants = { //je créé un objet dans lequel un mail(keys) est relié à un mdp (valeur)
-              "joe@gmail.com": "12345",
-              "titi@gmail.com": "54321",
-              "toto@gmail.com": "78945",
-              "minion@gmail.com": "66547"
-            }; 
-
-            var identificationMail = function(mailUtilisateur){ //je crée une fonction qui vérifiera le mail dans la variable indentificationMail
-                console.log("identifiant");
-                
-                if(mailUtilisateur.length < 4) { //je vérifie le nombre de caractère et indique l'erreur si inférieur
-                    alert("Vous devez saisir quatre caractères au minimum !");
+            function verificationIdentifiant(identifiant) {
+                if(identifiant.lenght < 4) {
+                    alert('Vous devez saisir quatre caractères minimum.');
                     return false;
-                }
-                else if(mailUtilisateur.indexOf("@") === -1) { //je vérifie que le mail a bien un @ et indique l'erreur si aucun @
-                    alert("Votre identifiant doit contenir un @");
-                    return false;2
-                }
-                else if(!(mailUtilisateur in identifiants)) { //je vérifie que le mail est bien existant dans l'objet et indique l'erreur si non
-                    alert("Votre identifiant est erroné");
+                } else if(identifiant.indexOf('@') === -1) {
+                    alert('Votre identifiant doit contenir un @.');
                     return false;
-                }
-                else{
-                    return true; //je retourne vrai si les autres conditions n'ont pas décelé d'erreurs
+                } else if(!(identifiant in compte)) {
+                    alert('Votre identifiant est erroné.');
+                    return false;
+                } else {
+                    return true;
                 }
             }
 
-            var identificationMDP = function(mailUtilisateur, motDePasseUtilisateur){ //je créé une fonction qui vérifiera que le mdp dans la variable identificationMDP
-                console.log("mot de passe");
-
-                if(motDePasseUtilisateur.length < 4) { //je vérifie le nombre de caractère et indique l'erreur si inférieur
-                    alert("Vous devez saisir quatre caractères au minimum !");
+            function verificationMotDePasse(identifiant, motDePasse) {
+                if(motDePasse.lenght < 4) {
+                    alert('Vous devez saisir quatre caractères minimum.');
                     return false;
-                }
-                else if (motDePasseUtilisateur != identifiants[mailUtilisateur]) { //je vérifie que le mdp correspond, dans l'objet, au mail donné
-                    alert("Votre mot de passe est erroné");// et indique l'erreur si ce n'est pas le cas
+                } else if(motDePasse != compte[identifiant]) {
+                    alert('Votre mot de passe est erroné.');
                     return false;
-                }
-                else {
-                    return true; //je retourne vrai si les autres conditions n'ont pas décelé d'erreurs
+                } else {
+                    return true;
                 }
             }
 
-            for (var i = 0; i < 4; i++){ //j'indique 4 itération maxi
-                mailUtilisateurDonner = prompt("Entrez votre identifiant.");
-                motDePasseUtilisateurDonner = prompt("Entrez votre mot de passe");
-                
-                if(identificationMail(mailUtilisateurDonner) === mailUtilisateurDonner || identificationMDP(mailUtilisateurDonner, motDePasseUtilisateurDonner) === motDePasseUtilisateurDonner) {
-                    alert("Bienvenue !");
+            for(i = 0; i < 4; i++){
+                identifiant = prompt('Indiquez votre identifiant');
+                motDePasse = prompt('Indiquez votre mot de passe');
+
+                if(verificationIdentifiant(identifiant) === true && verificationMotDePasse(identifiant, motDePasse) === true) {
+                    alert('Bienvenue !');
                     break;
                 }
             }
-
-            
-
         </script>
     </body>
 </html>

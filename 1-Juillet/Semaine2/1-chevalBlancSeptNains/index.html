@@ -1,58 +1,37 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8" />
-        <title></title>
+	<head>
+		<meta charset="utf-8" />
+		<!--<link type="text/css" rel="stylesheet" href="design.css" />-->
+		<title></title>
     </head>
+
     <body>
-          <script>
-                var chevalBlancReponse = prompt ("Quelle est la couleur du cheval blanc d'Henri IV ?")
+    		<script>
 
-                if(chevalBlancReponse == "blanc") {
-                  alert("Gagné");
-                }
-                else if(chevalBlancReponse != "blanc") {
-                  alert("Perdu");
-                  chevalBlancReponse = prompt ("Essai encore")
-                  if(chevalBlancReponse == "blanc") {
-                    alert("Gagné");
-                  }
-                  else {
-                    alert("Perdu");
-                  }
-                }
+    	var reponse1 = prompt('Quelle est la couleur du cheval blanc d\'Henri IV ?');
+    	if (reponse1 === 'blanc') {
+    		alert('Bonne reponse !');
+    	} else {
+    		reponse1 = prompt('Ce n\'est pas la bonne reponse. \n Quelle est la couleur du cheval blanc d\'Henri IV ?');
+    		if(reponse1 === 'blanc') {
+    			alert('Bonne réponse !');
+    		} else {
+    			alert('Vous avez perdu...');
+    		}
+    	}
 
-                var combienDeNains = prompt ("Combien y a t-il de sept nains?")
-
-                if(combienDeNains == 7) {
-                  alert("Gagné");
-                }
-                else if(combienDeNains != 7) {
-                  alert("Perdu");
-                  combienDeNains = prompt ("Essaie encore")
-                  if(combienDeNains == 7) {
-                    alert("bravo");
-                  }
-                  else {
-                    alert("perdu");
-                  }
-                }
-
-                var devinerUnChiffre = prompt ("Devine un chiffre entre 1 et 9")
-
-                if(devinerUnChiffre == 4) {
-                  alert("Gagné");
-                }
-                else if(devinerUnChiffre != 4) {
-                  alert ("Perdu!");
-                  devinerUnChiffre = prompt ("Essaie encore")
-                  if(devinerUnChiffre == 4) {
-                    alert('Gagné');
-                  }
-                  else {
-                    alert("perdu");
-                  }
-                }
-          </script>
+    	var reponse2 = parseInt(prompt('Combien y a t-il de sept nains ?'));
+    	if (reponse2 === 7) {
+    		alert('Bonne reponse !');
+    	} else {
+    		reponse2 = parseInt(prompt('Ce n\'est pas la bonne reponse. \n Combien y a t-il de sept nains ?'));
+    		if (reponse2 === 7) {
+    			alert('Bonne reponse');
+    		} else {
+    			alert('Vous avez perdu...');
+    		}
+    	}
+    </script>
     </body>
 </html>

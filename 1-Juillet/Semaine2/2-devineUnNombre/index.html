@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<!--<link type="text/css" rel="stylesheet" href="design.css" />-->
+		<title></title>
+    </head>
+
+    <body>
+    	<script>
+
+        var nombreAleatoire = Math.round(Math.random() * 9);
+        console.log(nombreAleatoire);
+
+        var reponse = parseFloat(prompt('Devine à quel nombre je pense, entre 0 et 9 '));
+
+        if (reponse === nombreAleatoire) {
+            alert('Bonne reponse !');
+        } else {
+            reponse = parseFloat(prompt('Ce n\'est pas la bonne reponse. \n Devine à quel nombre je pense, entre 0 et 9 '));
+            if (reponse === nombreAleatoire) {
+                alert('Bonne reponse !');
+            } else {
+                alert('Vous avez perdu...');
+            }
+        }
+    	
+        </script>
+    </body>
+</html>

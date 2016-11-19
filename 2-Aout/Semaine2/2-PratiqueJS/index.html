@@ -1,57 +1,28 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="fr">
     <head>
-        <meta charset="utf-8">
-        <title>Mail et mot de passe</title>
+        <meta charset="UTF-8">
+        <title></title>
     </head>
-    
+
     <body>
         <script>
-            
-            //PARTIE 1
-            
-            //écrire une fonction qui prend un mail et un mot de passe et renvoie un Object avec ces informations
-            
-            function nouvelUtilisateur (nomUtilisateur, motDePasse) {
-                this.nomUtilisateur = nomUtilisateur;
-                this.motDePasse =motDePasse;
+            function premier(temps){
+                var seconde = temps % 60;
+                var minute = Math.floor(temps / 60) ;
+                document.write('premier resultat : ' + minute + 'min' + seconde +'sec<br />');  
             }
-            
-            var saisieNomUtilisateur = prompt("Veuillez entrer un identifiant.");
-            var saisieMotDePasse = prompt("Veuillez entrer un mot de passe.");
-            var utilisateur = new nouvelUtilisateur(saisieNomUtilisateur, saisieMotDePasse);
-      
-            console.log(utilisateur);
-            
-            
-            // PARTIE 2
-            
-            //écrire une fonction qui reçoit un nombre de secondes et renvoie un texte en minutes
-    
-            function secondesEnMinutes(sec) {
-                var minutes = parseInt((sec / 60) % 60);
-                var secondes = sec % 60;
-                return(minutes + "min " + secondes + "sec");
-            }
-            
-            console.log(secondesEnMinutes(146));
-            console.log(secondesEnMinutes(123));
+            premier(123);
 
-            // deuxième fonction qui reçoit un nombre de secondes et renvoie un texte en minutes et en heures
-            
-            function secondesEnHeures(sec) {
-                var heures = parseInt((sec / 3600) % 60);  
-                var minutes = (parseInt(sec / 60) % 60);
-                var secondes = sec % 60;
-                return(heures + "h " + minutes + "min " + secondes + "sec");
+            function deuxieme(temps2){
+                var heure = Math.floor(temps2 / 3600);
+                var minute2 = Math.floor((temps2 - 3600) / 60);
+                var seconde2 = temps2 % 60;
+                document.write('deuxieme resultat : ' + heure + 'h' + minute2 + 'min' + seconde2 + 'sec<br />');
             }
-    
-            console.log(secondesEnHeures(3723));
-            
-            //PARTIE 3
-            
-            //calcul de moyenne (encore!)
-      
+            deuxieme(3723);
+
+
             var eleves = [
                 {prenom: "Lea", nom: "Petit", note: 10},
                 {prenom: "Joe", nom: "Martin", note: 15},
@@ -70,8 +41,7 @@
                 }
                 return moyenne.toFixed(2);
             }
-            
-            console.log(calculMoyenne(eleves));
-    </script>
-  </body>
+            document.write(calculMoyenne(eleves));
+        </script>
+    </body>
 </html>

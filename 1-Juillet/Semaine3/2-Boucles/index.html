@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+    </head>
+
+    <body>
+        <script>
+            var diese = '#';
+
+            for(i = 0; i < 10; i++) {
+                document.write('<p>' + diese + '</p>');
+                diese += '#';
+            }
+
+            var nombre = '1';
+
+            for(i = 2; i < 12; i++) {
+                document.write('<p>' + nombre + '</p>');
+                nombre += i;
+            }
+
+            var lettre = 'a';
+
+            for(i = 98; i < 124; i++) {
+                document.write('<p>' + lettre + '</p>');
+                lettre += String.fromCharCode(i);
+            }
+        </script>
+    </body>
+</html>

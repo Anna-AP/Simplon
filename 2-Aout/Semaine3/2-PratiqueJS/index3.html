@@ -1,54 +1,54 @@
-<!DOCTYPE>
-<html>
+<!doctype html>
+<html lang="fr">
     <head>
-        <meta charset="utf-8">
-        <title>Afficher et masquer des éléments</title>
+        <meta charset="UTF-8">
+        <title></title>
+        <style>
+            div {
+                width: 100px;
+                height: 100px;
+                margin: 6px;
+            }
+
+            #b1 {
+                background-color: red;
+            }
+
+            #b2 {
+                background-color: yellow;
+            }
+
+            #b3 {
+                background-color: orange
+            }
+
+            #b4 {
+                background-color: blue;
+            }
+        </style>
     </head>
-    
-    <style>
-        .bloc {
-            width: 150px;
-            height: 100px;
-            background: #181818;
-            margin: 10px;
-            color: #ffffff;
-        }
-        
-        a {
-            text-decoration: none;
-            color: #181818;
-            font-weight: bold;
-        }
-    </style>
 
     <body>
-        <div id="bloc_1" class="bloc" onclick="masqueBloc('bloc_1')">Bloc 1</div>
-        <div id="bloc_2" class="bloc" onclick="masqueBloc('bloc_2')">Bloc 2</div>
-        <div id="bloc_3" class="bloc" onclick="masqueBloc('bloc_3')">Bloc 3</div>
-        <div id="bloc_4" class="bloc" onclick="masqueBloc('bloc_4')">Bloc 4</div>
-
-        <div>
-            <a href="#" onclick="reset()">Reset</a>
-        </div>
+        <div id="b1" class="bloc" onclick="masqueBloc('b1')">A Masquez moi</div>
+        <div id="b2" class="bloc" onclick="masqueBloc('b2')">B Masquez moi</div>
+        <div id="b3" class="bloc" onclick="masqueBloc('b3')">C Masquez moi</div>
+        <div id="b4" class="bloc" onclick="masqueBloc('b4')">D Masquez moi</div>
+  
+        <div><a href="#" onclick="afficheTousLesBlocs()">Afficher tous</a></div>
         
         <script>
-            //au clic sur un bloc il doit être masqué. Si un autre était masqué, il doit être affiché
-            //on masque le bloc cliqué
-
             function masqueBloc(blocId){
-                document.getElementById(blocId).style.visibility="hidden";
-            };
-            
-            //on affiche tous les blocs de la page » qu'ont ils en commun ? leur classe !
-            
-            var elements = document.getElementsByClassName("bloc");
+                afficheTousLesBlocs();
+                
+                document.getElementById(blocId).style.display = 'none';
+            }
 
-            function reset(){
-                for(i=0; i < elements.length; i++){
-                    
-                    elements[i].style.visibility="visible";
-                };
-            };
+            function afficheTousLesBlocs(){
+                var bloc = document.getElementsByClassName('bloc');
+                for(var i = 0; i < bloc.length; i++ ) {
+                    bloc[i].style.display= 'block';
+                }
+            }
         </script>
     </body>
 </html>

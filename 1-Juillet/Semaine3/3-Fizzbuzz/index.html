@@ -1,27 +1,21 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="fr">
     <head>
-        <meta charset="utf-8" />
-		    <link type="text/css" rel="stylesheet" href="design.css" />
+        <meta charset="UTF-8">
         <title></title>
     </head>
 
     <body>
         <script>
-            
-            for (var i=0 ; i <= 100 ; i++) {
-                
-                if (i % 5 === 0 && i % 7 === 0) {
-                    document.write("<p>Fizzbuzz</p>");
-                }
-                else if(i % 5 === 0) {
-                    document.write("<p>Buzz</p>");
-                }
-                else if(i % 7 === 0) {
-                    document.write("<p>Fizz</p>");
-                }
-                else {
-                    document.write("<p>" + i + "</p>");
+            for(i = 0; i < 101; i++) {
+                if(i % 5 === 0 && i%7 === 0){
+                    document.write('<p>fizzbuzz</p>');
+                } else if(i % 5 === 0) {
+                    document.write('<p>buzz</p>');
+                } else if(i % 7 === 0) {
+                    document.write('<p>fizz</p>');
+                } else {
+                    document.write('<p>' + i + '</p>');
                 }
             }
         </script>

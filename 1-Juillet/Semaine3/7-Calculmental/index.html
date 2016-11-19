@@ -1,40 +1,37 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="fr">
     <head>
-        <meta charset="utf-8" />
-		    <link type="text/css" rel="stylesheet" href="design.css" />
+        <meta charset="UTF-8">
         <title></title>
     </head>
 
     <body>
-    <script>
-    do{
-      var nombre1 = Math.floor(Math.random() * 100);
-      var nombre2 = Math.floor(Math.random() * 99) + 1;
-      var operateurs = [ '+' , '-', '*' ];
-      var operateurChoisi = operateurs[Math.floor(Math.random() * 3)];
-      var resultat = 0;
-      switch(operateurChoisi) {
-        case '+':
-          resultat = nombre1 + nombre2;
-          break;
-        case '-':
-          resultat = nombre1 - nombre2;
-          break;
-        case '*':
-          resultat = nombre1 * nombre2;
-          break;
-        default:
-          break;
-      }
-      var tentative = prompt(nombre1 + operateurChoisi + nombre2 + " = ?");
-      if(parseFloat(tentative) === parseFloat(resultat)) {
-        alert("Bravo !");
-      } else {
-        alert("Raté !");
-      }
-    } while (confirm("Voulez-vous continuer ?"));
-        
-    </script>
+        <script>
+            var nombre1 = Math.round(Math.random() * 100);
+            var nombre2 = Math.round(Math.random() * 99) + 1;
+            var operateurs = ['+', '-', '*'];
+            var operateursAleatoire = operateurs[Math.round(Math.random() * 2)];
+            var resultat;
+
+            switch(operateursAleatoire) {
+                case'+':
+                    resultat = nombre1 + nombre2;
+                    break;
+                case'-':
+                    resultat = nombre1 - nombre2;
+                    break;
+                case'*':
+                    resultat = nombre1 * nombre2;
+                    break;
+            }
+
+            var reponse = parseFloat(prompt('Combien font : ' + nombre1 + operateursAleatoire + nombre2 + ' ?'));
+
+            if(reponse === resultat) {
+                alert('Bien joué');
+            } else {
+                alert('Oops, perdu');
+            }
+        </script>
     </body>
 </html>

@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+    </head>
+
+    <body>
+        <div id="connexion">
+            <form>
+                <p><label for="identifiant">Identifiant : <input type="text" name="identifiant" id="identifiant" /></label></p>
+                <p><label for="motDePasse">Mot de passe : <input type="password" name="motDePasse" id="motDePasse" /></label></p>
+                <p><input type="button" onclick="verification()" value="se connecter" /></p>
+            </form>
+            <div id="reponse"></div>
+        </div>
+
+        <div id="formInscription" style="display:none;">
+            <form>
+                <p><label for="inscripIdentifiant">Identifiant : <input type="text" name="inscripIdentifiant" id="inscripIdentifiant" /></label></p>
+                <p><label for="inscripMotDePasse">Mot de passe : <input type="password" name="inscripMotDePasse" id="inscripMotDePasse" /></label></p>
+                <p><input type="button" onclick="inscription()" value="s'enregistrer" /></p>
+            </form>
+
+            <p id="resultatInscription"></p>
+        </div>
+
+        <script>
+
+        function verification() {
+
+            var identifiant = document.getElementById('identifiant').value;
+            var motDePasse = document.getElementById('motDePasse').value;
+
+            if(identifiant === 'anna' && motDePasse === '12345') {
+                var info = document.getElementById('reponse');
+                info.innerHTML = 'Bienvenu ' + identifiant;
+            } else {
+                var confirmation = confirm('Souhaitez-vous vous inscrire ?');
+
+                if(confirmation) {
+                    var formConnexion = document.getElementById('connexion');
+                    var formInscription = document.getElementById('formInscription');
+
+                    formConnexion.style.display = 'none';
+                    formInscription.style.display = 'block';
+                } else{
+                    var info = document.getElementById('reponse');
+                    info.innerHTML = 'Bonne journée';
+                }
+            }
+        }
+        
+        function inscription() {
+            var inscripIdentifiant = document.getElementById('inscripIdentifiant').value;
+            var inscripMotDePasse = document.getElementById('inscripMotDePasse').value;
+            var paragraphe = document.getElementById('resultatInscription');
+
+            paragraphe.innerHTML = 'Bienvenu ' + inscripIdentifiant;
+        }
+        </script>
+    </body>
+</html>
